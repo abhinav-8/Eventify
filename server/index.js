@@ -13,8 +13,11 @@ app.use(cors());
 
 app.use("/posts", postRoutes);
 
-const CONNECTION_URL =
-  "mongodb+srv://assassin1771:assassin1771@cluster0.kwwcd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+app.get("/", (req, res) => {
+  res.send("server start");
+});
+
+const CONNECTION_URL = process.env.DATABASE;
 const PORT = process.env.PORT || 5000;
 
 mongoose
