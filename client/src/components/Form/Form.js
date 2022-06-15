@@ -98,7 +98,7 @@ const Form = ({ currentId, setCurrentId }) => {
             <TextField
               name="tags"
               variant="outlined"
-              label="Tags (coma separated)"
+              label="Date (DD/MM/YYYY)"
               fullWidth
               value={postData.tags}
               onChange={(e) =>

@@ -46,14 +46,14 @@ const Post = ({ post, setCurrentId }) => {
         </Button>
       </div>
       <div className={classes.details}>
-        <Typography variant="body2" color="textSecondary" component="h2">
-          {post.tags.map((tag) => `#${tag} `)}
+        <Typography variant="body2" component="h2">
+          Date: {post.tags.slice(0, 1).map((tag) => `${tag} `)}
         </Typography>
       </div>
       <Typography
         className={classes.title}
         gutterBottom
-        variant="h5"
+        variant="h3"
         component="h2"
       >
         {post.title}
@@ -64,8 +64,8 @@ const Post = ({ post, setCurrentId }) => {
       </CardContent> */}
 
       <CardContent>
-        <a href={post.message} target="_blank">
-          Visit Website here
+        <a href={post.message} className={classes.link} target="_blank">
+          Visit Event
         </a>
       </CardContent>
 
