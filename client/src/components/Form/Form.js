@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
+import CancelIcon from "@material-ui/icons/Cancel";
 
 import useStyles from "./styles";
 import { createPost, updatePost } from "../../actions/posts";
@@ -14,6 +15,9 @@ const Form = ({ currentId, setCurrentId }) => {
     tags: "",
     selectedFile: "",
   });
+
+  const [closeForm, setCloseForm] = useState(false);
+
   const post = useSelector((state) =>
     currentId ? state.posts.find((message) => message._id === currentId) : null
   );
@@ -47,96 +51,106 @@ const Form = ({ currentId, setCurrentId }) => {
     }
   };
 
+  const handleFormView = () => {
+    setCloseForm(true);
+  };
+
   return (
     <>
-      <Paper>
-        <Box className={classes.paper}>
-          <form
-            autoComplete="off"
-            noValidate
-            className={`${classes.root} ${classes.form}`}
-            onSubmit={handleSubmit}
-          >
-            <Typography variant="h6">
-              {currentId ? `Editing "${post.title}"` : "Add a New Event"}
-            </Typography>
-            <TextField
-              name="creator"
-              variant="outlined"
-              label="Event"
-              fullWidth
-              value={postData.creator}
-              onChange={(e) =>
-                setPostData({ ...postData, creator: e.target.value })
-              }
-            />
-
-            <TextField
-              name="title"
-              variant="outlined"
-              label="Description"
-              fullWidth
-              multiline
-              rows={4}
-              value={postData.title}
-              onChange={(e) =>
-                setPostData({ ...postData, title: e.target.value })
-              }
-            />
-
-            <TextField
-              name="message"
-              variant="outlined"
-              label="Event Link"
-              fullWidth
-              value={postData.message}
-              onChange={(e) =>
-                setPostData({ ...postData, message: e.target.value })
-              }
-            />
-
-            <TextField
-              name="tags"
-              variant="outlined"
-              label="Date (DD/MM/YYYY)"
-              fullWidth
-              value={postData.tags}
-              onChange={(e) =>
-                setPostData({ ...postData, tags: e.target.value.split(",") })
-              }
-            />
-
-            <div className={classes.fileInput}>
-              <FileBase
-                type="file"
-                multiple={false}
-                onDone={({ base64 }) =>
-                  setPostData({ ...postData, selectedFile: base64 })
+      {closeForm == false ? (
+        <Paper>
+          <Box className={classes.paper}>
+            <form
+              autoComplete="off"
+              noValidate
+              className={`${classes.root} ${classes.form}`}
+              onSubmit={handleSubmit}
+            >
+              <Typography variant="h6">
+                {currentId ? `Editing "${post.title}"` : "Enter Event Details"}
+              </Typography>
+              <CancelIcon
+                style={{ marginLeft: "150px", fontSize: "20px" }}
+                onClick={handleFormView}
+              />
+              <TextField
+                name="creator"
+                variant="outlined"
+                label="Event"
+                fullWidth
+                value={postData.creator}
+                onChange={(e) =>
+                  setPostData({ ...postData, creator: e.target.value })
                 }
               />
-            </div>
-            <Button
-              className={classes.buttonSubmit}
-              variant="contained"
-              color="primary"
-              size="large"
-              type="submit"
-              fullWidth
-            >
-              Submit
-            </Button>
-            <Button
-              variant="contained"
-              color="secondary"
-              size="small"
-              onClick={clear}
-              fullWidth
-            >
-              Clear
-            </Button>
-          </form>
-        </Box>
-      </Paper>
+
+              <TextField
+                name="title"
+                variant="outlined"
+                label="Description"
+                fullWidth
+                multiline
+                rows={4}
+                value={postData.title}
+                onChange={(e) =>
+                  setPostData({ ...postData, title: e.target.value })
+                }
+              />
+
+              <TextField
+                name="message"
+                variant="outlined"
+                label="Event Link"
+                fullWidth
+                value={postData.message}
+                onChange={(e) =>
+                  setPostData({ ...postData, message: e.target.value })
+                }
+              />
+
+              <TextField
+                name="tags"
+                variant="outlined"
+                label="Date (DD/MM/YYYY)"
+                fullWidth
+                value={postData.tags}
+                onChange={(e) =>
+                  setPostData({ ...postData, tags: e.target.value.split(",") })
+                }
+              />
+
+              <div className={classes.fileInput}>
+                <FileBase
+                  type="file"
+                  multiple={false}
+                  onDone={({ base64 }) =>
+                    setPostData({ ...postData, selectedFile: base64 })
+                  }
+                />
+              </div>
+              <Button
+                className={classes.buttonSubmit}
+                variant="contained"
+                color="primary"
+                size="large"
+                type="submit"
+                fullWidth
+              >
+                Submit
+              </Button>
+              <Button
+                variant="contained"
+                color="secondary"
+                size="small"
+                onClick={clear}
+                fullWidth
+              >
+                Clear
+              </Button>
+            </form>
+          </Box>
+        </Paper>
+      ) : null}
     </>
   );
 };

@@ -25,15 +25,15 @@ const App = () => {
   }, [currentId, dispatch]);
 
   const [display, setDisplay] = useState(false);
-  const [buttonText, setButtonText] = useState("Add a new Event?");
+  // const [buttonText, setButtonText] = useState("Add a new Event?");
 
   var handleDisplay = () => {
     if (display == false) {
       setDisplay(true);
-      setButtonText("Event Added!");
+      // setButtonText("Event Added!");
     } else {
       setDisplay(false);
-      setButtonText("Add a new Event?");
+      // setButtonText("Add a new Event?");
     }
   };
 
@@ -53,7 +53,7 @@ const App = () => {
           variant="outlined"
           onClick={handleDisplay}
         >
-          {buttonText}
+          Add a New Event?
         </Button>
       </Grid>
 
