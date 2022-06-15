@@ -25,7 +25,7 @@ const App = () => {
   }, [currentId, dispatch]);
 
   const [display, setDisplay] = useState(false);
-  const [buttonText, setButtonText] = useState("Add an Event?");
+  const [buttonText, setButtonText] = useState("Add a new Event?");
 
   var handleDisplay = () => {
     if (display == false) {
@@ -33,7 +33,7 @@ const App = () => {
       setButtonText("Maybe Not Now...");
     } else {
       setDisplay(false);
-      setButtonText("Add an Event?");
+      setButtonText("Add a new Event?");
     }
   };
 
@@ -43,12 +43,19 @@ const App = () => {
         <Typography className={classes.heading} variant="h2" align="center">
           TECH-O-WORLD
         </Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
+        {/* <img className={classes.image} src={memories} alt="icon" height="60" /> */}
       </AppBar>
 
-      <Button primary onClick={handleDisplay}>
-        {buttonText}
-      </Button>
+      <Grid container justify="center">
+        <Button
+          className={classes.addButton}
+          primary
+          variant="outlined"
+          onClick={handleDisplay}
+        >
+          {buttonText}
+        </Button>
+      </Grid>
 
       <br />
       <br />
