@@ -59,25 +59,28 @@ const App = () => {
 
       <br />
       <br />
-      <br />
       <Grow in>
         <Container>
           <Grid
             container
+            style={{ display: "flex", justifyContent: "center" }}
             justify="space-between"
             alignItems="stretch"
             spacing={3}
           >
             {display ? (
-              <Grid item xs={12} sm={4}>
+              <Grid align="center" item xs={12} sm={4} container spacing={2}>
                 <Form currentId={currentId} setCurrentId={setCurrentId} />
+                <br />
+                <br />
               </Grid>
             ) : null}
 
             {/* <Grid item xs={12} sm={7}> */}
-            <Posts setCurrentId={setCurrentId} />
+
             {/* </Grid> */}
           </Grid>
+          <Posts setCurrentId={setCurrentId} />
         </Container>
       </Grow>
     </Container>
