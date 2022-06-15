@@ -30,7 +30,7 @@ const App = () => {
   var handleDisplay = () => {
     if (display == false) {
       setDisplay(true);
-      setButtonText("Maybe Not Now...");
+      setButtonText("Event Added!");
     } else {
       setDisplay(false);
       setButtonText("Add a new Event?");
