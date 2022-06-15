@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+import {
+  Container,
+  AppBar,
+  Typography,
+  Grow,
+  Grid,
+  Button,
+} from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import Posts from "./components/Posts/Posts";
@@ -17,6 +24,12 @@ const App = () => {
     dispatch(getPosts());
   }, [currentId, dispatch]);
 
+  const [display, setDisplay] = useState(false);
+
+  var handleDisplay = () => {
+    setDisplay(true);
+  };
+
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
@@ -25,6 +38,14 @@ const App = () => {
         </Typography>
         <img className={classes.image} src={memories} alt="icon" height="60" />
       </AppBar>
+
+      <Button primary onClick={handleDisplay}>
+        WANT TO ADD AN EVENT??
+      </Button>
+
+      <br />
+      <br />
+      <br />
       <Grow in>
         <Container>
           <Grid
@@ -33,12 +54,15 @@ const App = () => {
             alignItems="stretch"
             spacing={3}
           >
+            {display ? (
+              <Grid item xs={12} sm={4}>
+                <Form currentId={currentId} setCurrentId={setCurrentId} />
+              </Grid>
+            ) : null}
+
             {/* <Grid item xs={12} sm={7}> */}
             <Posts setCurrentId={setCurrentId} />
             {/* </Grid> */}
-            <Grid item xs={12} sm={4}>
-              <Form currentId={currentId} setCurrentId={setCurrentId} />
-            </Grid>
           </Grid>
         </Container>
       </Grow>
