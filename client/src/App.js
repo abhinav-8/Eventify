@@ -25,9 +25,16 @@ const App = () => {
   }, [currentId, dispatch]);
 
   const [display, setDisplay] = useState(false);
+  const [buttonText, setButtonText] = useState("Add an Event?");
 
   var handleDisplay = () => {
-    setDisplay(true);
+    if (display == false) {
+      setDisplay(true);
+      setButtonText("Maybe Not Now...");
+    } else {
+      setDisplay(false);
+      setButtonText("Add an Event?");
+    }
   };
 
   return (
@@ -40,7 +47,7 @@ const App = () => {
       </AppBar>
 
       <Button primary onClick={handleDisplay}>
-        WANT TO ADD AN EVENT??
+        {buttonText}
       </Button>
 
       <br />
