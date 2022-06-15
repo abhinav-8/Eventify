@@ -36,7 +36,9 @@ const Post = ({ post, setCurrentId }) => {
           {moment(post.createdAt).fromNow()}
         </Typography>
       </div>
-      <div className={classes.overlay2}>
+
+      {/* EDIT POST FEATURE */}
+      {/* <div className={classes.overlay2}>
         <Button
           style={{ color: "white" }}
           size="small"
@@ -44,7 +46,7 @@ const Post = ({ post, setCurrentId }) => {
         >
           <MoreHorizIcon fontSize="default" />
         </Button>
-      </div>
+      </div> */}
       <div className={classes.details}>
         <Typography variant="body2" component="h2">
           Date: {post.tags.slice(0, 1).map((tag) => `${tag} `)}
