@@ -64,7 +64,9 @@ const Post = ({ post, setCurrentId }) => {
       </CardContent> */}
 
       <CardContent>
-        <a href={post.message}>Visit Website here</a>
+        <a href={post.message} target="_blank">
+          Visit Website here
+        </a>
       </CardContent>
 
       <CardActions className={classes.cardActions}>
