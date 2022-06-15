@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
   res.send("server start");
 });
 
-const CONNECTION_URL = process.env.DATABASE;
+const CONNECTION_URL =
+  "mongodb+srv://admin:admin@cluster0.kwwcd.mongodb.net/?retryWrites=true&w=majority";
 const PORT = process.env.PORT || 5000;
 
 mongoose
