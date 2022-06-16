@@ -181,7 +181,7 @@ const Form = ({ currentId, setCurrentId }) => {
       <Snackbar open={open} autoHideDuration={3000} onClose={handleToastClose}>
         <Typography
           style={{
-            backgroundColor: "teal",
+            backgroundColor: "#0af0f0",
             color: "white",
             width: "250px",
             border: "2px solid white",
