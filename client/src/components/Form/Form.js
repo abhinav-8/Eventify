@@ -24,18 +24,20 @@ const Form = ({ currentId, setCurrentId }) => {
     selectedFile: "",
   });
 
-  const [open, setOpen] = React.useState(false);
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
 
-  const handleToastClick = () => {
-    setOpen(true);
+  const { vertical, horizontal, open } = state;
+
+  const handleToastClick = (newState) => () => {
+    setState({ open: true, ...newState });
   };
 
-  const handleToastClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
+  const handleToastClose = () => {
+    setState({ ...state, open: false });
   };
 
   const [closeForm, setCloseForm] = useState(false);
@@ -157,7 +159,10 @@ const Form = ({ currentId, setCurrentId }) => {
                 size="large"
                 type="submit"
                 fullWidth
-                onClick={handleToastClick}
+                onClick={handleToastClick({
+                  vertical: "bottom",
+                  horizontal: "right",
+                })}
               >
                 Submit
               </Button>
@@ -178,7 +183,12 @@ const Form = ({ currentId, setCurrentId }) => {
       {/* <Button style={{ color: "red" }} onClick={handleToast}>
         Open simple snackbar
       </Button> */}
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleToastClose}>
+      <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={open}
+        autoHideDuration={3000}
+        onClose={handleToastClose}
+      >
         <Typography
           style={{
             backgroundColor: "#0af0f0",
