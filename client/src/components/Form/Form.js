@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Box, TextField, Button, Typography, Paper } from "@material-ui/core";
+import {
+  Snackbar,
+  SnackbarContent,
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Paper,
+} from "@material-ui/core";
 import { useDispatch, useSelector } from "react-redux";
 import FileBase from "react-file-base64";
 import CancelIcon from "@material-ui/icons/Cancel";
@@ -15,6 +23,20 @@ const Form = ({ currentId, setCurrentId }) => {
     tags: "",
     selectedFile: "",
   });
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleToastClick = () => {
+    setOpen(true);
+  };
+
+  const handleToastClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const [closeForm, setCloseForm] = useState(false);
 
@@ -135,6 +157,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 size="large"
                 type="submit"
                 fullWidth
+                onClick={handleToastClick}
               >
                 Submit
               </Button>
@@ -151,6 +174,23 @@ const Form = ({ currentId, setCurrentId }) => {
           </Box>
         </Paper>
       ) : null}
+
+      {/* <Button style={{ color: "red" }} onClick={handleToast}>
+        Open simple snackbar
+      </Button> */}
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleToastClose}>
+        <Typography
+          style={{
+            backgroundColor: "teal",
+            color: "white",
+            width: "250px",
+            border: "2px solid white",
+            borderRadius: "5px",
+          }}
+        >
+          EVENT ADDED!
+        </Typography>
+      </Snackbar>
     </>
   );
 };
