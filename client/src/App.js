@@ -44,6 +44,7 @@ const App = () => {
       <video
         autoPlay
         loop
+        muted
         style={{
           position: "fixed",
           width: "100%",
