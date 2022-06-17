@@ -191,14 +191,14 @@ const Form = ({ currentId, setCurrentId }) => {
       >
         <Typography
           style={{
-            backgroundColor: "#0af0f0",
+            backgroundColor: "#3b1ff0",
             color: "white",
             width: "250px",
             border: "2px solid white",
             borderRadius: "5px",
           }}
         >
-          EVENT ADDED!
+          EVENT ADDED!!
         </Typography>
       </Snackbar>
     </>
