@@ -101,6 +101,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 name="creator"
                 variant="outlined"
                 label="Event"
+                required
                 fullWidth
                 value={postData.creator}
                 onChange={(e) =>
@@ -114,6 +115,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 label="Description"
                 fullWidth
                 multiline
+                required
                 rows={4}
                 value={postData.title}
                 onChange={(e) =>
@@ -126,6 +128,7 @@ const Form = ({ currentId, setCurrentId }) => {
                 variant="outlined"
                 label="Event Link"
                 fullWidth
+                required
                 value={postData.message}
                 onChange={(e) =>
                   setPostData({ ...postData, message: e.target.value })
