@@ -15,6 +15,8 @@ import { getPosts } from "./actions/posts";
 import useStyles from "./styles";
 import memories from "./images/memories.png";
 
+import video from "../src/images/video2.mp4";
+
 const App = () => {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
@@ -39,6 +41,25 @@ const App = () => {
 
   return (
     <Container maxWidth="lg">
+      <video
+        autoPlay
+        loop
+        muted
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          left: "50%",
+          top: "50%",
+          height: "100%",
+          objectFit: "cover",
+          transform: "translate(-50%,-50%)",
+          zIndex: "-1",
+          objectFit: "cover",
+        }}
+      >
+        <source src={video} type="video/mp4"></source>
+      </video>
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">
           EVENTIFY
