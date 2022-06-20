@@ -33,20 +33,17 @@ Project Use Cases:
 - A platform for young and aspiring programmers to keep track of any programming contest, hackathon, job opportunities etc.
 - People can also add any any event if they are aware about.
 - Completely Responsive and works on all devices
-
-<!-- <p align="center">
+<p align="center">
+<img height="400px" width="800px" src="/SS/1.png">
+  <br>
+  <br>
+  <br>
   <img height="400px" width="800px" src="/SS/2.png">
-  <br>
-  <br>
-  <br>
-  <img height="400px" width="800px" src="/SS/33.png">
-  <br>
-  <br>
-  <br>
-  <img height="400px" width="800px" src="/SS/1.png">
+<br>
+<br>
+<br>
+<img height="400px" width="800px" src="/SS/3.png">
 </p>
-
- -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
