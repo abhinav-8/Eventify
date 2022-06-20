@@ -56,6 +56,7 @@ Various different technologies, frameworks and tools used in the building of thi
 
 - [React JS](https://reactjs.org/)
 - [Material UI](https://mui.com/)
+- [Node JS](https://nodejs.org/en/docs/)
 - [Redux](https://redux.js.org/)
 - [Express JS](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
