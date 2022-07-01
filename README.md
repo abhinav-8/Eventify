@@ -25,6 +25,7 @@
 
 ## About The Project
 
+<p> Project Video Link: <a href="https://drive.google.com/file/d/1788cnPZv9aWGVKBgDuSBmXroYBe6uBSL/view?usp=sharing"> Click Here </a> </p>
 
 Project Use Cases:
 
