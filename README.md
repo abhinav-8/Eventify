@@ -25,8 +25,6 @@
 
 ## About The Project
 
-View the live deployed project here <a href="https://sports-villa-final.vercel.app/" target="_blank">(No Link)</a> .
-
 
 Project Use Cases:
 
