@@ -34,15 +34,19 @@ Project Use Cases:
 - People can also add any any event if they are aware about.
 - Completely Responsive and works on all devices
 <p align="center">
-<img height="400px" width="800px" src="/SS/1.png">
+  
+<!--   ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/58933116/176933655-931d7e54-dc4c-4197-8b5e-73bf740ceb25.gif) -->
+<img src="https://user-images.githubusercontent.com/58933116/176933655-931d7e54-dc4c-4197-8b5e-73bf740ceb25.gif" height="400px" width="800px"/>
+
+<!-- <img height="400px" width="800px" src="/SS/1.png"> -->
   <br>
   <br>
   <br>
-  <img height="400px" width="800px" src="/SS/2.png">
+<!--   <img height="400px" width="800px" src="/SS/2.png"> -->
 <br>
 <br>
 <br>
-<img height="400px" width="800px" src="/SS/3.png">
+<!-- <img height="400px" width="800px" src="/SS/3.png"> -->
 </p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
